@@ -1,4 +1,4 @@
-//scanning the keyboard buffer, for Hot Keys
+//scanning the keyboard buffer
 #include<stdio.h>//for printf
 #include <conio.h>//for kbhit
 #include <dos.h>//for regs
