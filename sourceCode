@@ -1358,4 +1358,4 @@ void restrictmouseptr(int x1,int y1,int x2,int y2)
  in.x.dx=y2;
  int86(51,&in,&out);
  }
-// P.S. It's not about the thousand lines of code. It's about the passion to perform.
+// P.S. It's not about the thousand lines of code. It's about the passion to perform...
