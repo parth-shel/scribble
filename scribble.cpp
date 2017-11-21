@@ -1,6 +1,6 @@
-// Scribble v:2.0
-// 'Know it, Learn it, Live it, Love it..... Source Code'
-// Developed by Sahil Ramteke, Ayush Parekh & Parth Shelgaonkar.
+// Scribble 
+// @author parth_shel
+// @version v:3.0 - Nov. 21, 2017
 
 // Include the header files
 #include<dos.h> //for mouse programming,delay
@@ -1358,4 +1358,3 @@ void restrictmouseptr(int x1,int y1,int x2,int y2)
  in.x.dx=y2;
  int86(51,&in,&out);
  }
-// P.S. It's not about the thousand lines of code. It's about the passion to perform...
