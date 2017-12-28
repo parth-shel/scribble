@@ -1,19 +1,17 @@
-// Scribble - gcc version compiles using the libXbgi library for Unix like systems
-// @version v:3.0 - Dec 26, 2017
-// @aouthor parth_shel
+// Scribble v:2.0
+// 'Know it, Learn it, Live it, Love it..... Source Code'
+// Developed by Sahil Ramteke, Ayush Parekh & Parth Shelgaonkar.
 
 // Include the header files
-//#include<dos.h> //for mouse programming,delay
+#include<dos.h> //for mouse programming,delay
 #include<graphics.h> //for graphics functions
 #include<stdlib.h> //for exit function
-//#include<alloc.h> //for getimage/putimage
-#include"conio.h" //for kbhit
+#include<alloc.h> //for getimage/putimage
+#include<conio.h> //for kbhit
 #include<ctype.h> //for text processing
 #include<stdio.h> //for image saving
 #include<string.h> //for strings
-#include<fstream> //for data file system
-
-using namespace std;
+#include<fstream.h> //for data file system
 
 // Declare  Methods
 void mainmenu();
@@ -31,7 +29,7 @@ void consoleLoading();
 int getkey(void);
 void flushKeyboard(void);
 
-//union REGS in,out;
+union REGS in,out;
 int button=0,x=0,y=0;
 
 //class for buttons
@@ -153,12 +151,12 @@ setcolor(WHITE);
 
 
 //Main
-int main()
+void main()
 {
 int gd,gm,errorcode;
 //initialize graphics mode
 gd=DETECT;
-initgraph(&gd,&gm,"");
+initgraph(&gd,&gm,"c:\\TurboC3\\BGI");
 
 errorcode = graphresult();
 if (errorcode != grOk)  // an error occurred
@@ -174,10 +172,10 @@ if (errorcode != grOk)  // an error occurred
 }
 
 cleardevice();
-//setposi(320,190);//set mouse position
+setposi(320,190);//set mouse position
 mainmenu();
 closegraph();
-return 0;
+exit(0);
 }
 
 // Method for Help
@@ -1315,56 +1313,42 @@ void flushKeyboard()
 // Method to show cursor
 void showmouseptr()
 {
-/*
 in.x.ax=1;
 int86(0x33, &in, &out);
-*/
 }
 
 // Method to get status of mouse pointer:
 //including position of pointer & buttons pressed
 void getmousepos(int *button, int *x, int *y)
 {
-/*
 in.x.ax=3;
 int86(0x33, &in, &out);
 *button=out.x.bx;// return integer value.
-*/
 // 0 if no button pressed
 // 1 if left click
 // 2 if right click
 // 3 if middle btn press
-/*
 *x=out.x.cx;// X Position
 *y=out.x.dx;// Y Position
-*/
-int kind;
-getmouseclick(kind, x, y);
-*button = kind;
 }
 
 // Method to set mouse position
 void setposi(int &x,int &y) {
- /*
  in.x.ax=4;
  in.x.cx=x;
  in.x.dx=y;
  int86(51,&in,&out);
- */
-}
+ }
 
 // Method to hide mouse
 void mousehide() {
- /*
  in.x.ax=2;
  int86(51,&in,&out);
- */ 
-}
+ }
 
 // Method to restrict mouse
 void restrictmouseptr(int x1,int y1,int x2,int y2)
  {
- /*
  in.x.ax=7;
  in.x.cx=x1;
  in.x.dx=x2;
@@ -1373,6 +1357,5 @@ void restrictmouseptr(int x1,int y1,int x2,int y2)
  in.x.cx=y1;
  in.x.dx=y2;
  int86(51,&in,&out);
- */ 
-}
+ }
 // P.S. It's not about the thousand lines of code. It's about the passion to perform...
