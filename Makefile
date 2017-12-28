@@ -6,7 +6,7 @@ scribblemake: scribble.cpp
 
 git:
 	git add .
-	@git commit -v -m "made some changes"
+	git commit -v -m "made some changes"
 
 clean:
 	rm -rf scribble
