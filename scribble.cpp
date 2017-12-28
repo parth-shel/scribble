@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 // Scribble - gcc version compiles using the libXbgi library for Unix like systems
 // @version v:3.0 - Dec 26, 2017
 // @aouthor parth_shel
+=======
+// Scribble 
+// @author parth_shel
+// @version v:3.0 - Nov. 21, 2017
+>>>>>>> c37ebfb1b341e6f20cc5aef715455395ff80d1a1
 
 // Include the header files
 //#include<dos.h> //for mouse programming,delay
@@ -1373,6 +1379,10 @@ void restrictmouseptr(int x1,int y1,int x2,int y2)
  in.x.cx=y1;
  in.x.dx=y2;
  int86(51,&in,&out);
+<<<<<<< HEAD
  */ 
 }
 // P.S. It's not about the thousand lines of code. It's about the passion to perform...
+=======
+ }
+>>>>>>> c37ebfb1b341e6f20cc5aef715455395ff80d1a1
