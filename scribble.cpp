@@ -1,15 +1,12 @@
-<<<<<<< HEAD
 // Scribble - gcc version compiles using the libXbgi library for Unix like systems
 // @version v:3.0 - Dec 26, 2017
 // @aouthor parth_shel
-=======
 // Scribble 
 // @author parth_shel
 // @version v:3.0 - Nov. 21, 2017
->>>>>>> c37ebfb1b341e6f20cc5aef715455395ff80d1a1
 
 // Include the header files
-//#include<dos.h> //for mouse programming,delay
+#include"dos.h" //for mouse programming,delay
 #include<graphics.h> //for graphics functions
 #include<stdlib.h> //for exit function
 //#include<alloc.h> //for getimage/putimage
@@ -17,7 +14,7 @@
 #include<ctype.h> //for text processing
 #include<stdio.h> //for image saving
 #include<string.h> //for strings
-#include<fstream> //for data file system
+//#include<fstream.h> //for data file system
 
 using namespace std;
 
@@ -69,12 +66,11 @@ int pressEffect()
 {
 	getmousepos(&button,&x,&y);
 	if (x>left && x<right && y>top && y<bottom && button== 1){ //btn press event
-		void far *image = 0;
 		int a=left;
 		int b=top;
 		unsigned int sz ;
 		sz = imagesize(left,top,right,bottom);
-		image = farmalloc(sz);
+		void * image = (void *)malloc(sz);
 		mousehide();
 		getimage(left,top,right,bottom,image);
 		setfillstyle(SOLID_FILL,WHITE);
@@ -97,7 +93,7 @@ int pressEffect()
 		floodfill(left+7,top+7,WHITE);
 		bar(left,top,right,bottom);
 		putimage(a,b,image,COPY_PUT);
-		delete image;
+		free(image);
 		delay(100);
 		showmouseptr();
 		setcolor(WHITE);
@@ -673,10 +669,9 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>21+pensize && button
 			break;
 			}
 		}
-	 void far *image = 0;
 	 unsigned int sz ;
 	 sz = imagesize(x1,y1,x2,y2);
-	 image = farmalloc(sz);
+	 void * image = (void *)malloc(sz);
 	 mousehide();
 	 getimage(x1,y1,x2,y2,image);
 	 mousehide();
@@ -712,7 +707,7 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>21+pensize && button
 						if(button==1){
 							mousehide();
 							putimage(x-xrad,y-yrad,image,COPY_PUT);
-							delete image;
+							free(image);
 							setcolor(BLACK);
 							setfillstyle(1,BLACK);
 							bar(x1,y1,x2,y2);
@@ -978,7 +973,8 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  }sf;
  int x,y;
  char fname[15],s[1];
- ofstream fp;
+ //ofstream fp;
+ FILE * fp; 
  /*outtextxy(3,2,"Enter the name of the file: ");
  //scanf("%s",fname);
  gets(fname);
@@ -990,7 +986,8 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  setcolor(WHITE);
  setfillstyle(1,WHITE);
  outtextxy(3,2,"Working on it...");
- fp.open(fname,ios::out);
+ //fp.open(fname,ios::out);
+ fp = fopen(fname, "w");
  mousehide();
  for(x=1;x<=640;x++)
  {
@@ -999,12 +996,14 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 	if(getpixel(x,y)>0)
 	{
 	sf.col=x; sf.row=y; sf.color=getpixel(x,y);
-	fp<<sf.col<<','<<sf.row<<','<<sf.color<<',';
+	//fp<<sf.col<<','<<sf.row<<','<<sf.color<<',';
+	fprintf(fp, "%d,%d,%d,", sf.col, sf.row, sf.color);
 	}
  }
  }
  showmouseptr();
- fp.close();
+ //fp.close();
+ fclose(fp);
  setcolor(BLACK);
  setfillstyle(1,BLACK);
  bar(0,0,639,9);
@@ -1022,7 +1021,8 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  int col; int row; int color;
  }sf;
  char fname[15],ch;
- ifstream fp;
+ //ifstream fp;
+ FILE * fp;
  /*outtextxy(3,2,"Enter the name of the file: ");
  //scanf("%s",fname);
  gets(fname);
@@ -1033,14 +1033,15 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  bar(0,0,639,9);
  setcolor(WHITE);
  setfillstyle(1,WHITE);
- fp.open(fname,ios::in);
+ //fp.open(fname,ios::in);
+ fp  = fopen(fname, "r");
 	if(fp==NULL)
 	{
 		outtextxy(3,2,"File not found! ");
 		delay(1000);
 	}
 	else
-		while(!(fp.eof()))
+		/*while(!(fp.eof()))
 		{
 			fp>>sf.col;
 			fp>>ch;
@@ -1049,10 +1050,13 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 			fp>>sf.color;
 			fp>>ch;
 			putpixel(sf.col,sf.row,sf.color);
-		}
+		}*/
+		
+		//TODO: file reading and tokenizing to disp pixels
 
 
- fp.close();
+ //fp.close();
+ fclose(fp);
  setcolor(BLACK);
  setfillstyle(1,BLACK);
  bar(0,0,639,9);
@@ -1379,10 +1383,5 @@ void restrictmouseptr(int x1,int y1,int x2,int y2)
  in.x.cx=y1;
  in.x.dx=y2;
  int86(51,&in,&out);
-<<<<<<< HEAD
  */ 
 }
-// P.S. It's not about the thousand lines of code. It's about the passion to perform...
-=======
- }
->>>>>>> c37ebfb1b341e6f20cc5aef715455395ff80d1a1

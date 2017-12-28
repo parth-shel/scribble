@@ -2,7 +2,7 @@
 goal: scribblemake git
 
 scribblemake: scribble.cpp
-	gcc -g -o scribble scribble.cpp /usr/lib64/libXbgi.a -lm
+	gcc -g -w -o scribble scribble.cpp /usr/lib64/libXbgi.a -lm
 
 git:
 	git add .
