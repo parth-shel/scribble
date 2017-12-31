@@ -65,7 +65,7 @@ roundedRectangle(left,top,right,bottom,5);
 int pressEffect()
 {
 	getmousepos(&button,&x,&y);
-	if (x>left && x<right && y>top && y<bottom && button== 1){ //btn press event
+	if (x>left && x<right && y>top && y<bottom && (button== WM_LBUTTONDOWN || button == WM_MOUSEMOVE)){ //btn press event
 		int a=left;
 		int b=top;
 		unsigned int sz ;
