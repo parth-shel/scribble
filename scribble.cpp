@@ -66,6 +66,7 @@ int pressEffect()
 {
 	getmousepos(&button,&x,&y);
 	if (x>left && x<right && y>top && y<bottom && button== WM_LBUTTONDOWN){ //btn press event
+		printf("event logged");
 		int a=left;
 		int b=top;
 		unsigned int sz ;
