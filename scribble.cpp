@@ -1348,9 +1348,9 @@ int86(0x33, &in, &out);
 *x=out.x.cx;// X Position
 *y=out.x.dx;// Y Position
 */
-int kind;
-getmouseclick(kind, x, y);
-*button = kind;
+*button = mouseclick();
+*x = mousex();
+*y = mousey();
 }
 
 // Method to set mouse position
