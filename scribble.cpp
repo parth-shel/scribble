@@ -1,9 +1,6 @@
 // Scribble - gcc version compiles using the libXbgi library for Unix like systems
 // @version v:3.0 - Dec 26, 2017
 // @aouthor parth_shel
-// Scribble 
-// @author parth_shel
-// @version v:3.0 - Nov. 21, 2017
 
 // Include the header files
 #include"dos.h" //for mouse programming,delay
