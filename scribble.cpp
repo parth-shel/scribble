@@ -192,7 +192,7 @@ void helpscr(){
 mousehide();
 cleardevice();
   roundedRectangle(1,1,639,477,7);//screen border
-  settextstyle(7,0,7);
+  settextstyle(3,0,3);
   outtextxy(250,50,"Help");
   settextstyle(3,0,2);
   outtextxy(20,150,"Scribble has powerful tools for your creative ideas.");
@@ -211,8 +211,8 @@ cleardevice();
   outtextxy(569,441,"Back");
 while (1)
     {
-    showmouseptr();// Method called to show cursor
-    getmousepos(&button,&x,&y);
+    //showmouseptr();// Method called to show cursor
+    //getmousepos(&button,&x,&y);
 		if (backBtn.pressEffect()){ //Back btn
 		mainmenu();
 		}
@@ -228,7 +228,7 @@ void aboutscr(){
 mousehide();
 cleardevice();
   roundedRectangle(1,1,639,477,7);//screen border
-  settextstyle(7,0,7);
+  settextstyle(3,0,3);
   outtextxy(100,50,"About Scribble");
   settextstyle(3,0,2);
   outtextxy(20,150,"Scribble v:2.0 is a software developed in C++ designed");
@@ -247,8 +247,8 @@ cleardevice();
   outtextxy(569,441,"Back");
 while (1)
   {
-  showmouseptr();// Method called to show cursor
-  getmousepos(&button,&x,&y);
+  //showmouseptr();// Method called to show cursor
+  //getmousepos(&button,&x,&y);
 		if (backBtn.pressEffect()){ //Back btn
 		mainmenu();
 		}
@@ -323,7 +323,7 @@ cleardevice();
   exitBtn.show();
 while (1)
 {
-showmouseptr();// Method called to show cursor
+//showmouseptr();// Method called to show cursor
 //getmouseclick(button, &x, &y);
 //getmousepos(&button,&x,&y);
 	if (exitBtn.pressEffect()){ //Exit btn
