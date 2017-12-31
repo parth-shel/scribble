@@ -310,9 +310,9 @@ cleardevice();
   outtextxy(70,25,"SCRIBBLE");
   settextstyle(3,0,2);
   outtextxy(414,205,"Scribble Pad");
-  outtextxy(460,350,"Exit");
-  outtextxy(457,250,"Help");
-  outtextxy(448,300,"About");
+  outtextxy(460,355,"Exit");
+  outtextxy(457,255,"Help");
+  outtextxy(448,305,"About");
   buttons scribblePadBtn(400,200,550,230);//Scribble Pad btn
   buttons helpBtn(400,250,550,280);//Help btn
   buttons aboutBtn(400,300,550,330);//About btn
