@@ -1,4 +1,3 @@
-
 goal: scribblemake git
 
 scribblemake: scribble.cpp
