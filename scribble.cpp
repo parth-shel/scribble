@@ -324,6 +324,7 @@ cleardevice();
 while (1)
 {
 showmouseptr();// Method called to show cursor
+getevent();
 getmousepos(&button,&x,&y);
 	if (exitBtn.pressEffect()){ //Exit btn
 		cleardevice();
