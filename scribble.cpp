@@ -324,8 +324,8 @@ cleardevice();
 while (1)
 {
 showmouseptr();// Method called to show cursor
-getmouseclick(button, &x, &y);
-getmousepos(&button,&x,&y);
+//getmouseclick(button, &x, &y);
+//getmousepos(&button,&x,&y);
 	if (exitBtn.pressEffect()){ //Exit btn
 		cleardevice();
 		exit(0);
@@ -1350,7 +1350,6 @@ int86(0x33, &in, &out);
 *x=out.x.cx;// X Position
 *y=out.x.dx;// Y Position
 */
-getmouseclick(*button, x, y);
 *button = mouseclick();
 *x = mousex();
 *y = mousey();
