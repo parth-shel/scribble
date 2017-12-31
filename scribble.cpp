@@ -161,7 +161,7 @@ int gd,gm,errorcode;
 //initialize graphics mode
 gd=DETECT;
 //initgraph(&gd,&gm,"");
-initwindow(631, 441);
+initwindow(635, 445);
 
 errorcode = graphresult();
 if (errorcode != grOk)  // an error occurred
