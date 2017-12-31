@@ -1350,6 +1350,7 @@ int86(0x33, &in, &out);
 *x=out.x.cx;// X Position
 *y=out.x.dx;// Y Position
 */
+getmouseclick(*button, x, y);
 *button = mouseclick();
 *x = mousex();
 *y = mousey();
