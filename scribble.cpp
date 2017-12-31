@@ -64,6 +64,7 @@ roundedRectangle(left,top,right,bottom,5);
 }
 int pressEffect()
 {
+	printf("method called\n");
 	getmousepos(&button,&x,&y);
 	if (x>left && x<right && y>top && y<bottom && button== WM_LBUTTONDOWN){ //btn press event
 		printf("event logged");
