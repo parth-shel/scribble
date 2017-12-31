@@ -160,7 +160,7 @@ int main()
 int gd,gm,errorcode;
 //initialize graphics mode
 gd=DETECT;
-initgraph(&gd,&gm,"");
+//initgraph(&gd,&gm,"");
 initwindow(630, 440);
 
 errorcode = graphresult();
