@@ -309,7 +309,7 @@ cleardevice();
   settextstyle(3,0,5);
   outtextxy(70,25,"SCRIBBLE");
   settextstyle(3,0,2);
-  outtextxy(414,200,"Scribble Pad");
+  outtextxy(414,205,"Scribble Pad");
   outtextxy(460,350,"Exit");
   outtextxy(457,250,"Help");
   outtextxy(448,300,"About");
