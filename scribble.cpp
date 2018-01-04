@@ -208,17 +208,12 @@ cleardevice();
   outtextxy(572,444,"Back");
 while (1)
     {
-    //showmouseptr();// Method called to show cursor
-    //getmousepos(&button,&x,&y);
 		button = mouseclick();
 		x = mousex();
 		y = mousey();
-		if(x > 550 && x < 630 && y > 440 && y < 470 && button == WM_LBUTTONDOWN) {
+		if(x > 550 && x < 630 && y > 440 && y < 470 && button == WM_LBUTTONDOWN) { //Back btn
 			mainmenu();
 		}
-		/*if (backBtn.pressEffect()){ //Back btn
-			mainmenu();
-		}*/
     }
 }
 
@@ -250,12 +245,13 @@ cleardevice();
   outtextxy(572,444,"Back");
 while (1)
   {
-  //showmouseptr();// Method called to show cursor
-  //getmousepos(&button,&x,&y);
-		if (backBtn.pressEffect()){ //Back btn
-		mainmenu();
+		button = mouseclick();
+		x = mousex();
+		y = mousey();
+		if(x > 550 && x < 630 && y > 440 && y < 470 && button == WM_LBUTTONDOWN) { //Back btn
+			mainmenu();
 		}
-  }
+    }
 }
 
 // Method for Main Menu
@@ -328,10 +324,7 @@ cleardevice();
   exitBtn.show();
 while (1)
 {
-//showmouseptr();// Method called to show cursor
-//getmouseclick(button, &x, &y);
-//getmousepos(&button,&x,&y);
-	if (exitBtn.pressEffect()){ //Exit btn
+	/*if (exitBtn.pressEffect()){ //Exit btn
 		cleardevice();
 		exit(0);
 		}
@@ -344,7 +337,25 @@ while (1)
 	else if(aboutBtn.pressEffect()){// About btn
 		aboutscr();
 		}
-      }
+      }*/
+	button = mouseclick();
+	x = mousex();
+	y = mousey();
+	
+	if(x > 400 && x < 550 && y > 200 && y < 230 && button == WM_LBUTTONDOWN) { //Scribble Pad btn
+		scribblepad(3,WHITE,1);
+	}
+	else if(x > 400 && x < 550 && y > 250 && y < 280 && button == WM_LBUTTONDOWN) { //Help btn
+		helpscr();
+	}
+	else if(x > 400 && x < 550 && y > 300 && y < 330 && button == WM_LBUTTONDOWN) { //About btn
+		aboutscr();
+	}
+	else if(x > 400 && x < 550 && y > 350 && y < 380 && button == WM_LBUTTONDOWN) { //Exit btn
+		cleardevice();
+		exit(0);
+	}
+}
 }
 
 //Method for Drawing Screen
