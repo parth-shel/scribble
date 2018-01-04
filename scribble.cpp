@@ -1147,7 +1147,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  }
  else if(x>1 && x<639 && y>10 && y<450){//drawing tool instruction
  settextstyle(0,0,1);
- outtextxy(3,2,"Scribble Pad. Hold Left mouse button to draw and Right mouse button to erase.");
+ outtextxy(3,0,"Scribble Pad. Hold Left mouse button to draw and Right mouse button to erase.");
  }
  else if(saveBtn.hover()){//save btn hover
  settextstyle(0,0,1);
