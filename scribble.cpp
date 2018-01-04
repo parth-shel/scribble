@@ -962,87 +962,80 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 	showmouseptr();
 	}
  else if(saveBtn.press()){//saving image
- setcolor(BLACK);
- setfillstyle(1,BLACK);
- bar(0,0,639,14);
- setcolor(WHITE);
- setfillstyle(1,WHITE);
- struct savef
- {
- int col; int row; int color;
- }sf;
- int x,y;
- char fname[15],s[1];
- //ofstream fp;
- FILE * fp; 
- /*outtextxy(3,2,"Enter the name of the file: ");
- //scanf("%s",fname);
- gets(fname);
- strcat(fname,".pic");*/
- strcpy(fname,"SCRIBBLE.PIC");
- setcolor(BLACK);
- setfillstyle(1,BLACK);
- bar(0,0,639,9);
- setcolor(WHITE);
- setfillstyle(1,WHITE);
- outtextxy(3,2,"Working on it...");
- //fp.open(fname,ios::out);
- fp = fopen(fname, "w");
- mousehide();
- for(x=1;x<=640;x++)
- {
- for(y=15;y<=450;y++)
- {
-	if(getpixel(x,y)>0)
-	{
-	sf.col=x; sf.row=y; sf.color=getpixel(x,y);
-	//fp<<sf.col<<','<<sf.row<<','<<sf.color<<',';
-	fprintf(fp, "%d,%d,%d,", sf.col, sf.row, sf.color);
-	}
- }
- }
- showmouseptr();
- //fp.close();
- fclose(fp);
- setcolor(BLACK);
- setfillstyle(1,BLACK);
- bar(0,0,639,9);
- setcolor(WHITE);
- setfillstyle(1,WHITE);
+ 	setcolor(BLACK);
+ 	setfillstyle(1,BLACK);
+ 	bar(0,0,639,14);
+ 	setcolor(WHITE);
+ 	setfillstyle(1,WHITE);
+ 	struct savef {
+ 		int col; int row; int color;
+ 	}sf;
+ 	int x,y;
+ 	char fname[15],s[1];
+ 	//ofstream fp;
+ 	FILE * fp; 
+ 	/*outtextxy(3,2,"Enter the name of the file: ");
+ 	//scanf("%s",fname);
+ 	gets(fname);
+ 	strcat(fname,".pic");*/
+ 	strcpy(fname,"SCRIBBLE.PIC");
+ 	setcolor(BLACK);
+ 	setfillstyle(1,BLACK);
+ 	bar(0,0,639,9);
+ 	setcolor(WHITE);
+ 	setfillstyle(1,WHITE);
+ 	outtextxy(3,2,"Working on it...");
+ 	//fp.open(fname,ios::out);
+ 	fp = fopen(fname, "w");
+ 	mousehide();
+ 	for(x=1;x<=640;x++) {
+ 		for(y=15;y<=450;y++) {
+			if(getpixel(x,y)>0) {
+				sf.col=x; sf.row=y; sf.color=getpixel(x,y);
+				//fp<<sf.col<<','<<sf.row<<','<<sf.color<<',';
+				fprintf(fp, "%d,%d,%d,", sf.col, sf.row, sf.color);
+			}
+ 		}
+ 	}
+ 	showmouseptr();
+ 	//fp.close();
+ 	fclose(fp);
+ 	setcolor(BLACK);
+ 	setfillstyle(1,BLACK);
+ 	bar(0,0,639,9);
+ 	setcolor(WHITE);
+ 	setfillstyle(1,WHITE);
  }
  else if(openBtn.press()){//opening image
- setcolor(BLACK);
- setfillstyle(1,BLACK);
- bar(0,0,639,14);
- setcolor(WHITE);
- setfillstyle(1,WHITE);
- struct savef
- {
- int col; int row; int color;
- }sf;
- char fname[15],ch;
- //ifstream fp;
- FILE * fp;
- /*outtextxy(3,2,"Enter the name of the file: ");
- //scanf("%s",fname);
- gets(fname);
- strcat(fname,".pic");*/
- strcpy(fname,"SCRIBBLE.PIC");
- setcolor(BLACK);
- setfillstyle(1,BLACK);
- bar(0,0,639,14);
- setcolor(WHITE);
- setfillstyle(1,WHITE);
- //fp.open(fname,ios::in);
- fp  = fopen(fname, "r");
-	if(fp==NULL)
-	{
+ 	setcolor(BLACK);
+ 	setfillstyle(1,BLACK);
+ 	bar(0,0,639,14);
+ 	setcolor(WHITE);
+ 	setfillstyle(1,WHITE);
+ 	struct savef {
+ 		int col; int row; int color;
+ 	}sf;
+ 	char fname[15],ch;
+ 	//ifstream fp;
+ 	FILE * fp;
+ 	/*outtextxy(3,2,"Enter the name of the file: ");
+ 	//scanf("%s",fname);
+ 	gets(fname);
+ 	strcat(fname,".pic");*/
+ 	strcpy(fname,"SCRIBBLE.PIC");
+ 	setcolor(BLACK);
+ 	setfillstyle(1,BLACK);
+ 	bar(0,0,639,14);
+ 	setcolor(WHITE);
+ 	setfillstyle(1,WHITE);
+ 	//fp.open(fname,ios::in);
+ 	fp  = fopen(fname, "r");
+	if(fp==NULL) {
 		outtextxy(3,2,"File not found! ");
 		delay(1000);
 	}
-	else
-		/*while(!(fp.eof()))
-		{
+	else {
+		/*while(!(fp.eof())) {
 			fp>>sf.col;
 			fp>>ch;
 			fp>>sf.row;
@@ -1052,16 +1045,17 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 			putpixel(sf.col,sf.row,sf.color);
 		}*/
 		
-		//TODO: file reading and tokenizing to disp pixels
+	//TODO: file reading and tokenizing to disp pixels
+		break;	
+	}
 
-
- //fp.close();
- fclose(fp);
- setcolor(BLACK);
- setfillstyle(1,BLACK);
- bar(0,0,639,14);
- setcolor(WHITE);
- setfillstyle(1,WHITE);
+ 	//fp.close();
+ 	fclose(fp);
+ 	setcolor(BLACK);
+ 	setfillstyle(1,BLACK);
+ 	bar(0,0,639,14);
+ 	setcolor(WHITE);
+ 	setfillstyle(1,WHITE);
  }
 
  else if(doneBtn.hover()){//Done btn hover
