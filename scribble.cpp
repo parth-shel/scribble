@@ -328,16 +328,16 @@ while (1)
 	x = mousex();
 	y = mousey();
 	
-	if(x > 400 && x < 550 && y > 200 && y < 230 && button == WM_LBUTTONDOWN) { //Scribble Pad btn
+	if(scribblePadBtn.pressEffect()) { //Scribble Pad btn
 		scribblepad(3,WHITE,1);
 	}
-	else if(x > 400 && x < 550 && y > 250 && y < 280 && button == WM_LBUTTONDOWN) { //Help btn
+	else if(helpBtn.pressEffect()) { //Help btn
 		helpscr();
 	}
-	else if(x > 400 && x < 550 && y > 300 && y < 330 && button == WM_LBUTTONDOWN) { //About btn
+	else if(aboutBtn.pressEffect()) { //About btn
 		aboutscr();
 	}
-	else if(x > 400 && x < 550 && y > 350 && y < 380 && button == WM_LBUTTONDOWN) { //Exit btn
+	else if(exitBtn.pressEffect()) { //Exit btn
 		cleardevice();
 		exit(0);
 	}
