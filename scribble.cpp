@@ -61,7 +61,7 @@ roundedRectangle(left,top,right,bottom,5);
 }
 int pressEffect()
 {
-	getmousepos(&button,&x,&y);
+	//getmousepos(&button,&x,&y);
 	if (x>left && x<right && y>top && y<bottom && button== WM_LBUTTONDOWN){ //btn press event
 		int a=left;
 		int b=top;
@@ -101,7 +101,7 @@ int pressEffect()
 }
 int press()
 {
-	getmousepos(&button,&x,&y);
+	//getmousepos(&button,&x,&y);
 	if (x>left && x<right && y>top && y<bottom && button== WM_LBUTTONDOWN){ //btn press event
 		return(1);
 	}
@@ -110,7 +110,7 @@ int press()
 }
 int hover()
 {
-	getmousepos(&button,&x,&y);
+	//getmousepos(&button,&x,&y);
 	if (x>left && x<right && y>top && y<bottom){ //btn hover
 		return(1);
 	}
@@ -324,20 +324,6 @@ cleardevice();
   exitBtn.show();
 while (1)
 {
-	/*if (exitBtn.pressEffect()){ //Exit btn
-		cleardevice();
-		exit(0);
-		}
-	else if (scribblePadBtn.pressEffect()){// Scribble Pad btn
-		scribblepad(3,WHITE,1);
-		}
-	else if(helpBtn.pressEffect()){// Help btn
-		helpscr();
-		}
-	else if(aboutBtn.pressEffect()){// About btn
-		aboutscr();
-		}
-      }*/
 	button = mouseclick();
 	x = mousex();
 	y = mousey();
@@ -533,22 +519,18 @@ while(1)
 	 //restrictmouseptr(2,10,638,479);
 
  if(x>1+pensize && x<639-pensize && y<450-pensize && y>15+pensize && button==1 && drawselect==1){ // Drawing Tool
-	 mousehide();
 	 setcolor(pencolor);
 	 setfillstyle(1,pencolor);
 	 fillellipse(x,y,pensize,pensize);
 	 setcolor(WHITE);
 	 setfillstyle(1,WHITE);
-	 showmouseptr();
  }
  else if(x>6+pensize && x<634-pensize && y<445-pensize && y>20+pensize && button==2){ // Erasing Tool
-	 mousehide();
 	 setcolor(BLACK);
 	 setfillstyle(1,BLACK);
 	 bar(x-(pensize+5),y-(pensize+5),x+(pensize+5),y+(pensize+5));
 	 setcolor(WHITE);
 	 setfillstyle(1,WHITE);
-	 showmouseptr();
  }
  else if(x>11+pensize && x<629-pensize && y<440-pensize && y>26+pensize && button==1 && drawselect==2){ //Airbrush Tool
 	 spray(x,y,pensize,pencolor);
