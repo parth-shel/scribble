@@ -27,6 +27,7 @@ void setposi(int &x,int &y);
 void restrictmouseptr(int x1,int y1,int x2,int y2);
 void spray(int a, int b, int s, int c);
 void roundedRectangle( int x1, int y1, int x2, int y2, int cornerRadius);
+void clearTopText();
 void consoleLoading();
 int getkey(void);
 void flushKeyboard(void);
@@ -1064,94 +1065,117 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  }
 
  else if(doneBtn.hover()){//Done btn hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Back to Menu.");
  }
  else if(clearBtn.hover()){//Clear btn hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"New ScribblePad.");
  }
  else if(penSize1.hover()){//size 1 btn hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Size : Small.");
  }
  else if(penSize3.hover()){//size 3 btn hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Size : Medium.");
  }
  else if(penSize5.hover()){//size 5 btn hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Size : Large.");
  }
  else if(penColorW.hover()){//color white btn hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Color : White.");
  }
  else if(penColorB.hover()){//color blue btn hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Color : Blue.");
  }
  else if(penColorG.hover()){//color green btn hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Color : Green.");
  }
  else if(penColorR.hover()){//color red btn hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Color : Red.");
  }
  else if(penColorY.hover()){//color yellow hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Color : Yellow.");
  }
  else if(drawingToolBtn.hover()){//drawing tool hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Drawing Tool.");
  }
  else if(selectionToolBtn.hover()){//selection tool hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Selection Tool.");
  }
  else if(lineToolBtn.hover()){//line tool hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Line Tool.");
  }
  else if(boxToolBtn.hover()){//box tool hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Box Tool.");
  }
  else if(fillBoxToolBtn.hover()){//fill box tool hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Fill Box Tool.");
  }
  else if(circleToolBtn.hover()){//circle tool hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Circle Tool.");
  }
  else if(fillCircleToolBtn.hover()){//fill circle tool hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Fill Circle Tool.");
  }
  else if(airBrushToolBtn.hover()){//airbrush tool hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Air-Brush Tool.");
  }
  else if(x>91 && x<139 && y>455 && y<475){//system tray hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"System Tray.");
  }
  else if(x>216 && x<229 && y>455 && y<475){//system tray hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"System Tray.");
  }
  else if(x>1 && x<639 && y>15 && y<450){//drawing tool instruction
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Scribble Pad. Hold Left mouse button to draw and Right mouse button to erase.");
  }
  else if(saveBtn.hover()){//save btn hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Save your drawing.");
  }
  else if(openBtn.hover()){//open btn hover
+ clearTopText();
  settextstyle(0,0,1);
  outtextxy(3,2,"Open a saved drawing.");
  }
@@ -1193,9 +1217,22 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  }
  }
 
+//Method to clear the top text while hovering
+//@param: none
+//@return: void
+//@throws: none
+//@author: Parth S.
+void clearTopText() {
+	setcolor(BLACK);
+	setfillstyle(1, BLACK);
+	bar(0,0,639,14);
+	setcolor(WHITE);
+	setfillstyle(1, WHITE);
+}
+
 //Method for AirBrush
 //@param: coordinates of centre, radius & color
-//@return void
+//@return: void
 //@throws: void
 //@author: Parth S.
  void spray(int a, int b, int s, int c){
