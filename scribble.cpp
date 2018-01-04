@@ -211,7 +211,7 @@ while (1)
 		button = mouseclick();
 		x = mousex();
 		y = mousey();
-		if(x > 550 && x < 630 && y > 440 && y < 470 && button == WM_LBUTTONDOWN) { //Back btn
+		if(backBtn.pressEffect()) { //Back btn
 			mainmenu();
 		}
     }
@@ -248,7 +248,7 @@ while (1)
 		button = mouseclick();
 		x = mousex();
 		y = mousey();
-		if(x > 550 && x < 630 && y > 440 && y < 470 && button == WM_LBUTTONDOWN) { //Back btn
+		if(backBtn.pressEffect()) { //Back btn
 			mainmenu();
 		}
     }
