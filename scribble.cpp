@@ -508,9 +508,12 @@ void scribblepad( unsigned int pensize, unsigned int pencolor, unsigned int draw
 
 while(1)
 {
-	 showmouseptr();
-	 getmousepos(&button,&x,&y);
-	 restrictmouseptr(2,10,638,479);
+	 //showmouseptr();
+	 //getmousepos(&button,&x,&y);
+	 button = mouseclick();
+	 x = mousex();
+	 y = mousey();
+	 //restrictmouseptr(2,10,638,479);
 
  if(x>1+pensize && x<639-pensize && y<450-pensize && y>15+pensize && button==1 && drawselect==1){ // Drawing Tool
 	 mousehide();
