@@ -241,7 +241,7 @@ cleardevice();
   line(142,435,400,435);
   buttons backBtn(550,440,630,470);//back btn
   backBtn.show();
-  outtextxy(569,440,"Back");
+  outtextxy(569,441,"Back");
 while (1)
   {
   //showmouseptr();// Method called to show cursor
