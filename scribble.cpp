@@ -73,7 +73,7 @@ int pressEffect()
 		setcolor(WHITE);
 		floodfill(left+5,top+1,WHITE);
 		bar(left+3,top+3,right-3,bottom-3);
-		delay(30);
+		delay(50);
 		setfillstyle(SOLID_FILL,LIGHTGRAY);
 		setcolor(LIGHTGRAY);
 		floodfill(left+5,top+1,WHITE);
