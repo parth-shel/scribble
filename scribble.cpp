@@ -61,7 +61,6 @@ roundedRectangle(left,top,right,bottom,5);
 }
 int pressEffect()
 {
-	//getmousepos(&button,&x,&y);
 	if (x>left && x<right && y>top && y<bottom && button== WM_LBUTTONDOWN){ //btn press event
 		int a=left;
 		int b=top;
@@ -101,7 +100,6 @@ int pressEffect()
 }
 int press()
 {
-	//getmousepos(&button,&x,&y);
 	if (x>left && x<right && y>top && y<bottom && button== WM_LBUTTONDOWN){ //btn press event
 		return(1);
 	}
@@ -110,7 +108,6 @@ int press()
 }
 int hover()
 {
-	//getmousepos(&button,&x,&y);
 	if (x>left && x<right && y>top && y<bottom){ //btn hover
 		return(1);
 	}
@@ -132,7 +129,6 @@ radioButtons(int x1, int y1, int x2, int y2)
 }
 int select()
 {
-	//getmousepos(&button,&x,&y);
 	if (x>left && x<right && y>top && y<bottom && button== 1){ //btn press event
 		setcolor(WHITE);
 		roundedRectangle(left,top,right,bottom,5);
@@ -186,7 +182,6 @@ return 0;
 //@throws: none
 //@author: Parth S.
 void helpscr(){
-//mousehide();
 cleardevice();
   roundedRectangle(1,1,639,477,7);//screen border
   settextstyle(3,0,3);
@@ -223,7 +218,6 @@ while (1)
 //@throws: void
 //@author: Parth S.
 void aboutscr(){
-mousehide();
 cleardevice();
   roundedRectangle(1,1,639,477,7);//screen border
   settextstyle(3,0,3);
@@ -261,7 +255,6 @@ while (1)
 //@author: Parth S.
 void mainmenu()
 {
-mousehide();
 cleardevice();
   roundedRectangle(1,1,639,477,7);//screen border
   //pencil graphic
@@ -510,12 +503,9 @@ void scribblepad( unsigned int pensize, unsigned int pencolor, unsigned int draw
 
 while(1)
 {
-	 //showmouseptr();
-	 //getmousepos(&button,&x,&y);
 	 button = mouseclick();
 	 x = mousex();
 	 y = mousey();
-	 //restrictmouseptr(2,10,638,479);
 
  if(x>1+pensize && x<639-pensize && y<450-pensize && y>15+pensize && button==1 && drawselect==1){ // Drawing Tool
 	 setcolor(pencolor);
@@ -1200,7 +1190,6 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 	 setcolor(WHITE);
 	 setfillstyle(1,WHITE);
      }
- restrictmouseptr(2,15,638,479);
  }
  }
 
