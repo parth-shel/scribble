@@ -480,7 +480,7 @@ void scribblepad( unsigned int pensize, unsigned int pencolor, unsigned int draw
 	 doneBtn.show();
 	 clearBtn.show();
 	 outtextxy(603,460,"Done");
-	 outtextxy(510,460,"ScribblePad");
+	 outtextxy(513,460,"ScribblePad");
 
 	 switch(pensize){
 		case 1 : penSize1.show(); break;
