@@ -476,7 +476,7 @@ void scribblepad( unsigned int pensize, unsigned int pencolor, unsigned int draw
 	 floodfill(468,465,WHITE);
 	 setcolor(WHITE);
 	 setfillstyle(SOLID_FILL,WHITE);
-	 settextstyle(0,0,2);
+	 settextstyle(0,0,3);
 	 doneBtn.show();
 	 clearBtn.show();
 	 outtextxy(603,460,"Done");
