@@ -988,7 +988,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 			if(getpixel(sx,sy)>0) {
 				sf.col=sx; sf.row=sy; sf.color=getpixel(sx,sy);
 				//fp<<sf.col<<','<<sf.row<<','<<sf.color<<',';
-				fprintf(fp, "%d,%d,%d,", sf.col, sf.row, sf.color);
+				fprintf(fp, "%d,%d,%d,\n", sf.col, sf.row, sf.color);
 			}
  		}
  	}
