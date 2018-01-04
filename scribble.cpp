@@ -992,9 +992,9 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 			}
  		}
  	}
- 	showmouseptr();
  	//fp.close();
 	fclose(fp);
+	printf("done saving.\n");
  	clearTopText();
  }
  else if(openBtn.press()){//opening image
