@@ -355,7 +355,7 @@ void scribblepad( unsigned int pensize, unsigned int pencolor, unsigned int draw
  int hotKey;
  mousehide();
  cleardevice();
-	 roundedRectangle(1,13,639,450,7);//Scribble Area
+	 roundedRectangle(1,15,639,450,7);//Scribble Area
 	 buttons doneBtn(595,455,635,475);//Done btn
 	 buttons clearBtn(485,455,590,475);//Clear btn
 
