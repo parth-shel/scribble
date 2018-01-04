@@ -757,7 +757,10 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
  else if(x>1 && x<639 && y>15 && y<450 &&button==1 && drawselect==5){//Filled Box Tool
 	while(1){
 		showmouseptr();
-		getmousepos(&button,&x,&y);
+		//getmousepos(&button,&x,&y);
+		button = mouseclick();
+		x = mousex();
+		y = mousey();
 		if(x>1 && x<639 && y>15 && y<450 && button==1){
 		    putpixel(x,y,pencolor);
 		    x1=x;y1=y;
@@ -766,7 +769,10 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 		}
 	while(x>1 && x<639 && y>15 && y<450 && button==1){//drag mouse
 		showmouseptr();
-		getmousepos(&button,&x,&y);
+		//getmousepos(&button,&x,&y);
+		button = mouseclick();
+		x = mousex();
+		y = mousey();
 		if(button==0){
 			x2=x;y2=y;
 			break;
