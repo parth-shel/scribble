@@ -226,12 +226,12 @@ mousehide();
 cleardevice();
   roundedRectangle(1,1,639,477,7);//screen border
   settextstyle(3,0,3);
-  outtextxy(100,50,"About Scribble");
+  outtextxy(125,50,"About Scribble");
   settextstyle(3,0,2);
   outtextxy(20,100,"Scribble v:3.0 is a software developed in C++ designed");
   outtextxy(20,125,"to give you powerful tools for your creative ideas.");
-  outtextxy(20,175,"   Credits :");
-  outtextxy(20,200,"Design & Development - Parth Shelgaonkar");
+  outtextxy(20,200,"   Credits :");
+  outtextxy(20,225,"Design & Development - Parth Shelgaonkar");
   //outtextxy(20,275,"Graphics & Interface  - Ayush Parekh");
   //outtextxy(20,300,"Testing & Production  - Sahil Ramteke");
   //outtextxy(20,350,"For any assistance or feedback, please contact :");
