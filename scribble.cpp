@@ -286,6 +286,7 @@ cleardevice();
   line(35,425,140,425);
   line(90,435,170,435);
   line(135,445,195,445);
+  delay(100);
   setcolor(CYAN);
   setfillstyle(SOLID_FILL,CYAN);
   floodfill(102,400,WHITE);
