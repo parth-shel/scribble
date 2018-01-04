@@ -982,7 +982,12 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  	setfillstyle(1,WHITE);
  	outtextxy(3,2,"Working on it...");
  	//fp.open(fname,ios::out);
- 	fp = fopen(fname, "w+");
+ 	printf("getting bitmap for buffering..\n");
+	int sz = imagesize(0,14,640,450);
+	void * image = (void *)malloc(sz);
+	getimage(0,14,640,450,image);
+	printf("done.\n");
+	fp = fopen(fname, "w+");
  	for(sx=1;sx<=639;sx++) {
  		for(sy=15;sy<=450;sy++) {
 			//c = getpixel(sx,sy);	
