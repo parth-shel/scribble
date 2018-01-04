@@ -1146,7 +1146,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  outtextxy(3,2,"System Tray.");
  }
  else if(x>1 && x<639 && y>10 && y<450){//drawing tool instruction
- settextstyle(0,0,1);
+ settextstyle(0,0,0);
  outtextxy(3,0,"Scribble Pad. Hold Left mouse button to draw and Right mouse button to erase.");
  }
  else if(saveBtn.hover()){//save btn hover
