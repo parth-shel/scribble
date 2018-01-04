@@ -987,6 +987,8 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 	void * image = (void *)malloc(sz);
 	getimage(0,14,640,450,image);
 	printf("done.\n");
+	int * test = (int *)image;
+	printf("%d %d %d\n", test[0]);
 	fp = fopen(fname, "w+");
  	for(sx=1;sx<=639;sx++) {
  		for(sy=15;sy<=450;sy++) {
