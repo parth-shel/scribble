@@ -985,17 +985,15 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  	fp = fopen(fname, "w+");
  	for(sx=1;sx<=100;sx++) {
  		for(sy=15;sy<=100;sy++) {
-			//if(getpixel(sx,sy)>0) {
+			if(getpixel(sx,sy) != BLACK) {
 				sf.col=sx; sf.row=sy; sf.color=getpixel(sx,sy);
 				//fp<<sf.col<<','<<sf.row<<','<<sf.color<<',';
 				fprintf(fp, "%d,%d,%d,\n", sf.col, sf.row, sf.color);
-			//}
+			}
  		}
  	}
-	printf("done iterating..\n");
  	//fp.close();
 	fclose(fp);
-	printf("done saving.\n");
  	clearTopText();
  }
  else if(openBtn.press()){//opening image
