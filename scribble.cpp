@@ -132,7 +132,7 @@ radioButtons(int x1, int y1, int x2, int y2)
 }
 int select()
 {
-	getmousepos(&button,&x,&y);
+	//getmousepos(&button,&x,&y);
 	if (x>left && x<right && y>top && y<bottom && button== 1){ //btn press event
 		setcolor(WHITE);
 		roundedRectangle(left,top,right,bottom,5);
