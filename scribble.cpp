@@ -355,7 +355,7 @@ void scribblepad( unsigned int pensize, unsigned int pencolor, unsigned int draw
  int hotKey;
  mousehide();
  cleardevice();
-	 roundedRectangle(1,10,639,450,7);//Scribble Area
+	 roundedRectangle(1,13,639,450,7);//Scribble Area
 	 buttons doneBtn(595,455,635,475);//Done btn
 	 buttons clearBtn(485,455,590,475);//Clear btn
 
@@ -1147,7 +1147,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  }
  else if(x>1 && x<639 && y>10 && y<450){//drawing tool instruction
  settextstyle(0,0,1);
- outtextxy(3,-1,"Scribble Pad. Hold Left mouse button to draw and Right mouse button to erase.");
+ outtextxy(3,2,"Scribble Pad. Hold Left mouse button to draw and Right mouse button to erase.");
  }
  else if(saveBtn.hover()){//save btn hover
  settextstyle(0,0,1);
