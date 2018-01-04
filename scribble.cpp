@@ -990,7 +990,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 	//dump bitmap:
 	int * test = (int *)image;
 	for(int i =0;i < sz/sizeof(int);i++) {
-		printf("%d ", test[i]);
+		printf("%f ", test[i]);
 		if(i % 10 == 0)
 			printf("\n");
 	}
