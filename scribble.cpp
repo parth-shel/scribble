@@ -983,13 +983,13 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  	outtextxy(3,2,"Working on it...");
  	//fp.open(fname,ios::out);
  	fp = fopen(fname, "w+");
- 	for(sx=1;sx<=300;sx++) {
- 		for(sy=15;sy<=300;sy++) {
-			if(getpixel(sx,sy)>0) {
+ 	for(sx=1;sx<=100;sx++) {
+ 		for(sy=15;sy<=100;sy++) {
+			//if(getpixel(sx,sy)>0) {
 				sf.col=sx; sf.row=sy; sf.color=getpixel(sx,sy);
 				//fp<<sf.col<<','<<sf.row<<','<<sf.color<<',';
 				fprintf(fp, "%d,%d,%d,\n", sf.col, sf.row, sf.color);
-			}
+			//}
  		}
  	}
 	printf("done iterating..\n");
