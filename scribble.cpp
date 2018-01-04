@@ -357,7 +357,7 @@ void scribblepad( unsigned int pensize, unsigned int pencolor, unsigned int draw
  cleardevice();
 	 roundedRectangle(1,15,639,450,7);//Scribble Area
 	 buttons doneBtn(595,455,635,475);//Done btn
-	 buttons clearBtn(495,455,590,475);//Clear btn
+	 buttons clearBtn(505,455,590,475);//Clear btn
 
 	 radioButtons penSize1(10,455,30,475);//pensize 1 btn
 	 radioButtons penSize3(35,455,55,475);//pensize 3 btn
