@@ -966,7 +966,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  	struct savef {
  		int col; int row; int color;
  	}sf;
- 	int sx,sy;
+ 	int sx,sy,c;
  	char fname[15],s[1];
  	//ofstream fp;
  	FILE * fp; 
@@ -985,8 +985,9 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  	fp = fopen(fname, "w+");
  	for(sx=1;sx<=639;sx++) {
  		for(sy=15;sy<=450;sy++) {
-			if(getpixel(sx,sy) != BLACK) {
-				sf.col=sx; sf.row=sy; sf.color=getpixel(sx,sy);
+			c = getpixel(sx,sy);	
+			if(c != BLACK) {
+				sf.col=sx; sf.row=sy; sf.color=c;
 				//fp<<sf.col<<','<<sf.row<<','<<sf.color<<',';
 				fprintf(fp, "%d,%d,%d,\n", sf.col, sf.row, sf.color);
 			}
