@@ -67,18 +67,18 @@ int pressEffect()
 		unsigned int sz ;
 		sz = imagesize(left,top,right,bottom);
 		void * image = (void *)malloc(sz);
-		mousehide();
+		//mousehide();
 		getimage(left,top,right,bottom,image);
 		setfillstyle(SOLID_FILL,WHITE);
 		setcolor(WHITE);
 		floodfill(left+5,top+1,WHITE);
 		bar(left+3,top+3,right-3,bottom-3);
-		delay(50);
+		delay(30);
 		setfillstyle(SOLID_FILL,LIGHTGRAY);
 		setcolor(LIGHTGRAY);
 		floodfill(left+5,top+1,WHITE);
 		bar(left+3,top+3,right-3,bottom-3);
-		delay(50);
+		delay(70);
 		setfillstyle(SOLID_FILL,DARKGRAY);
 		setcolor(DARKGRAY);
 		floodfill(left+5,top+1,WHITE);
@@ -90,8 +90,8 @@ int pressEffect()
 		bar(left,top,right,bottom);
 		putimage(a,b,image,COPY_PUT);
 		free(image);
-		delay(100);
-		showmouseptr();
+		//delay(100);
+		//showmouseptr();
 		setcolor(WHITE);
 		return(1);
 	}
