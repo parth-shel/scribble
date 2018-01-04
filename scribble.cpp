@@ -102,7 +102,7 @@ int pressEffect()
 int press()
 {
 	getmousepos(&button,&x,&y);
-	if (x>left && x<right && y>top && y<bottom && button== 1){ //btn press event
+	if (x>left && x<right && y>top && y<bottom && button== WM_LBUTTONDOWN){ //btn press event
 		return(1);
 	}
 	else
@@ -186,7 +186,7 @@ return 0;
 //@throws: none
 //@author: Parth S.
 void helpscr(){
-mousehide();
+//mousehide();
 cleardevice();
   roundedRectangle(1,1,639,477,7);//screen border
   settextstyle(3,0,3);
@@ -210,9 +210,15 @@ while (1)
     {
     //showmouseptr();// Method called to show cursor
     //getmousepos(&button,&x,&y);
-		if (backBtn.pressEffect()){ //Back btn
-		mainmenu();
+		button = mouseclick();
+		x = mousex();
+		y = mousey();
+		if(x > 550 && x < 630 && y > 440 && y < 470 && button == WM_LBUTTONDOWN) {
+			mainmenu();
 		}
+		/*if (backBtn.pressEffect()){ //Back btn
+			mainmenu();
+		}*/
     }
 }
 
@@ -770,7 +776,7 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 		    break;
 		    }
 		}
-	while(x>1 && x<639 && y>15 && y<450 /*&& button==1*/){//drag mouse
+	while(x>1 && x<639 && y>15 && y<450 && button==1){//drag mouse
 		showmouseptr();
 		//getmousepos(&button,&x,&y);
 		button = mouseclick();
