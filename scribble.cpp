@@ -992,6 +992,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 			}
  		}
  	}
+	printf("done iterating..\n");
  	//fp.close();
 	fclose(fp);
 	printf("done saving.\n");
