@@ -962,15 +962,11 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 	showmouseptr();
 	}
  else if(saveBtn.press()){//saving image
- 	setcolor(BLACK);
- 	setfillstyle(1,BLACK);
- 	bar(0,0,639,14);
- 	setcolor(WHITE);
- 	setfillstyle(1,WHITE);
+ 	clearTopText();
  	struct savef {
  		int col; int row; int color;
  	}sf;
- 	int x,y;
+ 	int sx,sy;
  	char fname[15],s[1];
  	//ofstream fp;
  	FILE * fp; 
@@ -987,11 +983,10 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  	outtextxy(3,2,"Working on it...");
  	//fp.open(fname,ios::out);
  	fp = fopen(fname, "w");
- 	mousehide();
- 	for(x=1;x<=640;x++) {
- 		for(y=15;y<=450;y++) {
-			if(getpixel(x,y)>0) {
-				sf.col=x; sf.row=y; sf.color=getpixel(x,y);
+ 	for(sx=1;sx<=640;sx++) {
+ 		for(sy=15;sy<=450;sy++) {
+			if(getpixel(sx,sy)>0) {
+				sf.col=sx; sf.row=sy; sf.color=getpixel(sx,sy);
 				//fp<<sf.col<<','<<sf.row<<','<<sf.color<<',';
 				fprintf(fp, "%d,%d,%d,", sf.col, sf.row, sf.color);
 			}
@@ -999,19 +994,11 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  	}
  	showmouseptr();
  	//fp.close();
- 	fclose(fp);
- 	setcolor(BLACK);
- 	setfillstyle(1,BLACK);
- 	bar(0,0,639,9);
- 	setcolor(WHITE);
- 	setfillstyle(1,WHITE);
+	fclose(fp);
+ 	clearTopText();
  }
  else if(openBtn.press()){//opening image
- 	setcolor(BLACK);
- 	setfillstyle(1,BLACK);
- 	bar(0,0,639,14);
- 	setcolor(WHITE);
- 	setfillstyle(1,WHITE);
+ 	clearTopText();
  	struct savef {
  		int col; int row; int color;
  	}sf;
@@ -1023,11 +1010,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  	gets(fname);
  	strcat(fname,".pic");*/
  	strcpy(fname,"SCRIBBLE.PIC");
- 	setcolor(BLACK);
- 	setfillstyle(1,BLACK);
- 	bar(0,0,639,14);
- 	setcolor(WHITE);
- 	setfillstyle(1,WHITE);
+ 	clearTopText();
  	//fp.open(fname,ios::in);
  	fp  = fopen(fname, "r");
 	if(fp==NULL) {
@@ -1051,11 +1034,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 
  	//fp.close();
  	fclose(fp);
- 	setcolor(BLACK);
- 	setfillstyle(1,BLACK);
- 	bar(0,0,639,14);
- 	setcolor(WHITE);
- 	setfillstyle(1,WHITE);
+	clearTopText();
  }
 
  else if(doneBtn.hover()){//Done btn hover
