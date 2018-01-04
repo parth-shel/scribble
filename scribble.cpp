@@ -476,11 +476,11 @@ void scribblepad( unsigned int pensize, unsigned int pencolor, unsigned int draw
 	 floodfill(468,465,WHITE);
 	 setcolor(WHITE);
 	 setfillstyle(SOLID_FILL,WHITE);
-	 settextstyle(0,0,1);
+	 settextstyle(0,0,2);
 	 doneBtn.show();
 	 clearBtn.show();
-	 outtextxy(600,462,"Done");
-	 outtextxy(492,462,"ScribblePad");
+	 outtextxy(600,460,"Done");
+	 outtextxy(492,460,"ScribblePad");
 
 	 switch(pensize){
 		case 1 : penSize1.show(); break;
