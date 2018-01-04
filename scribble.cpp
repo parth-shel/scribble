@@ -306,7 +306,7 @@ cleardevice();
   setfillstyle(SOLID_FILL,WHITE);
 
   settextstyle(3,0,5);
-  outtextxy(250,75,"SCRIBBLE");
+  outtextxy(265,75,"SCRIBBLE");
   settextstyle(3,0,2);
   outtextxy(414,205,"Scribble Pad");
   outtextxy(460,355,"Exit");
