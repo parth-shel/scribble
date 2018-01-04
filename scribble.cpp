@@ -226,7 +226,7 @@ mousehide();
 cleardevice();
   roundedRectangle(1,1,639,477,7);//screen border
   settextstyle(3,0,3);
-  outtextxy(125,50,"About Scribble");
+  outtextxy(175,50,"About Scribble");
   settextstyle(3,0,2);
   outtextxy(20,100,"Scribble v:3.0 is a software developed in C++ designed");
   outtextxy(20,125,"to give you powerful tools for your creative ideas.");
