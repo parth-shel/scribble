@@ -983,7 +983,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  	outtextxy(3,2,"Working on it...");
  	//fp.open(fname,ios::out);
  	fp = fopen(fname, "w+");
- 	for(sx=1;sx<=640;sx++) {
+ 	for(sx=1;sx<=639;sx++) {
  		for(sy=15;sy<=450;sy++) {
 			if(getpixel(sx,sy)>0) {
 				sf.col=sx; sf.row=sy; sf.color=getpixel(sx,sy);
