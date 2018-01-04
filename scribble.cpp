@@ -192,7 +192,7 @@ cleardevice();
   settextstyle(3,0,3);
   outtextxy(250,50,"Help");
   settextstyle(3,0,2);
-  outtextxy(20,125,"Scribble has powerful tools for your creative ideas.");
+  outtextxy(20,100,"Scribble has powerful tools for your creative ideas.");
   outtextxy(20,175,"Every feature and user interface element has been designed");
   outtextxy(20,200,"to be immediately intuitive and easily learned without");
   outtextxy(20,225,"any assistance .");
