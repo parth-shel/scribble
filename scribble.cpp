@@ -497,7 +497,6 @@ void scribblepad( unsigned int pensize, unsigned int pencolor, unsigned int draw
 		case BLUE : penColorB.show(); break;
 		case WHITE : penColorW.show(); break;
 	 }
-	drawselect = 5;
 	 switch(drawselect){
 		case 1 : drawingToolBtn.show(); break;
 		case 2 : airBrushToolBtn.show(); break;
