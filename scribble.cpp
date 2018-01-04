@@ -988,12 +988,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 	getimage(0,14,640,450,image);
 	printf("done.\n");
 	//dump bitmap:
-	int * test = (int *)image;
-	for(int i =0;i < sz/sizeof(int);i++) {
-		printf("%f ", test[i]);
-		if(i % 10 == 0)
-			printf("\n");
-	}
+	putimage(0,0,image,COPY_PUT);
 	fp = fopen(fname, "w+");
  	for(sx=1;sx<=639;sx++) {
  		for(sy=15;sy<=450;sy++) {
