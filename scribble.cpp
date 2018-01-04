@@ -988,7 +988,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 	getimage(0,14,640,450,image);
 	printf("done.\n");
 	//dump bitmap:
-	putimage(0,0,image,COPY_PUT);
+	putimage(0,0,image,XOR_PUT);
 	fp = fopen(fname, "w+");
  	for(sx=1;sx<=639;sx++) {
  		for(sy=15;sy<=450;sy++) {
