@@ -524,7 +524,7 @@ while(1)
 	 setcolor(WHITE);
 	 setfillstyle(1,WHITE);
  }
- else if(x>6+pensize && x<634-pensize && y<445-pensize && y>20+pensize && button==2){ // Erasing Tool
+ else if(x>6+pensize && x<634-pensize && y<445-pensize && y>20+pensize && button==3){ // Erasing Tool
 	 setcolor(BLACK);
 	 setfillstyle(1,BLACK);
 	 bar(x-(pensize+5),y-(pensize+5),x+(pensize+5),y+(pensize+5));
