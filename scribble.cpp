@@ -890,9 +890,6 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  	//fp.close();
 	fclose(fp);
  	clearTopText();
-	outtextxy(3,2,"Done.");
-	delay(1000);
-	clearTopText();
  }
  else if(openBtn.press()){//opening image
  	clearTopText();
