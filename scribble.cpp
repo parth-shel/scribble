@@ -719,15 +719,15 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 						free(image);
 						setcolor(BLACK);
 						setfillstyle(1,BLACK);
-						bar(x1,y1,x2,y2);
+						bar(x1,y1,x2+1,y2+1);
 						setfillstyle(1,WHITE);
 						setcolor(WHITE);
-						showmouseptr();
-						drawselect=1;
-						drawingToolBtn.show();
-						drawingToolBtn.select();
-						selectionToolBtn.unselect();
-						restrictmouseptr(2,15,638,479);
+						//showmouseptr();
+						//drawselect=1;
+						//drawingToolBtn.show();
+						//drawingToolBtn.select();
+						//selectionToolBtn.unselect();
+						//restrictmouseptr(2,15,638,479);
 						break;
 				}
 				//		}
