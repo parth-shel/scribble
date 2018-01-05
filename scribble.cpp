@@ -526,19 +526,22 @@ while(1)
 	 spray(x,y,pensize,pencolor);
  }
  else if(x>1 && x<639 && y<450 && y>15 && button==1 && drawselect==6){//Circle Tool
-		while(1){
-			showmouseptr();
-			getmousepos(&button,&x,&y);
-			if(x>1 && x<639 && y>15 && y<450 && button==1){
+		//while(1){
+			//showmouseptr();
+			//getmousepos(&button,&x,&y);
+			//if(x>1 && x<639 && y>15 && y<450 && button==1){
 				putpixel(x,y,pencolor);
 				x1=x;y1=y;
-				break;
-				}
-			}
-		while(x>1 && x<639 && y>15 && y<450 && button==1){//drag mouse
-			showmouseptr();
-			getmousepos(&button,&x,&y);
-			if(button==0){
+				//break;
+				//}
+			//}
+		while(1){//drag mouse
+			//showmouseptr();
+			//getmousepos(&button,&x,&y);
+			button = mouseclick();
+			x = mousex();
+			y = mousey();
+			if(x>1 && x<639 && y>15 && y<450 && button==1){
 				x2=x;y2=y;
 				break;
 				}
@@ -569,19 +572,22 @@ while(1)
 
 	}
 else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button==1 && drawselect==7){//Filled Circle Tool
-	while(1){
-		showmouseptr();
-		getmousepos(&button,&x,&y);
-		if(x>1 && x<639 && y>15 && y<450 && button==1){
+	//while(1){
+		//showmouseptr();
+		//getmousepos(&button,&x,&y);
+		//if(x>1 && x<639 && y>15 && y<450 && button==1){
 		  putpixel(x,y,pencolor);
 		  x1=x;y1=y;
-		  break;
-		  }
-		}
-	while(x>1 && x<639 && y>15 && y<450 && button==1){//drag mouse
-		showmouseptr();
-		getmousepos(&button,&x,&y);
-		if(button==0){
+		  //break;
+		  //}
+		//}
+	while(1){//drag mouse
+		//showmouseptr();
+		//getmousepos(&button,&x,&y);
+		button = mouseclick();
+		x = mousex();
+		y = mousey();
+		if(x>1 && x<639 && y>15 && y<450 && button==1){
 			x2=x;y2=y;
 			break;
 			}
@@ -690,7 +696,7 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 			  b=y1;
 			}
 				while(1){
-				showmouseptr();
+				//showmouseptr();
 				getmousepos(&button,&x,&y);
 				restrictmouseptr(1+xrad,15+yrad,639-xrad,449-yrad);
 				  // if(x>a && x<a+xrad+xrad && y>b && y<b+yrad+yrad && button==1){
@@ -722,19 +728,22 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 	xrad=0;yrad=0;a=0;b=0;
 	}
  else if(x>1 && x<639 && y>15 && y<450 &&button==1 && drawselect==4){//Box Tool
-	while(1){
-		showmouseptr();
-		getmousepos(&button,&x,&y);
-		if(x>1 && x<639 && y>15 && y<450 && button==1){
+	//while(1){
+		//showmouseptr();
+		//getmousepos(&button,&x,&y);
+		//if(x>1 && x<639 && y>15 && y<450 && button==1){
 		    putpixel(x,y,pencolor);
 		    x1=x;y1=y;
-		    break;
-		    }
-		}
-	while(x>1 && x<639 && y>15 && y<450 && button==1){//drag mouse
-		showmouseptr();
-		getmousepos(&button,&x,&y);
-		if(button==0){
+		    //break;
+		    //}
+		//}
+	while(1){//drag mouse
+		//showmouseptr();
+		//getmousepos(&button,&x,&y);
+		button = mouseclick();
+		x = mousex();
+		y = mousey();
+		if(x>1 && x<639 && y>15 && y<450 && button==1){
 			x2=x;y2=y;
 			break;
 			}
@@ -760,7 +769,7 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 		    //}
 		//}
 	while(1){//drag mouse
-		showmouseptr();
+		//showmouseptr();
 		//getmousepos(&button,&x,&y);
 		button = mouseclick();
 		x = mousex();
