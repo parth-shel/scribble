@@ -876,8 +876,8 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  	outtextxy(3,2,"Working on it...");
  	//fp.open(fname,ios::out);
 	fp = fopen(fname, "w+");
- 	for(sx=1;sx<=639;sx++) {
- 		for(sy=15;sy<=450;sy++) {
+ 	for(sx=1;sx<=100/*639*/;sx++) {
+ 		for(sy=15;sy<=100/*450*/;sy++) {
 			c = getpixel(sx,sy);	
 			if(c != getbkcolor()) {
 				sf.col=sx; sf.row=sy; sf.color=c;
@@ -922,7 +922,10 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 		}*/
 		
 	//TODO: file reading and tokenizing to disp pixels
-		break;	
+		while(fgetc(fp) != EOF) {
+			fscanf(fp, "%d,%d,%d,\n", &sf.col, &sf.row, &sf.color);
+			putpixel(sf.col, sf.row, sf.color);
+		}	
 	}
 
  	//fp.close();
