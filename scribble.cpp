@@ -889,7 +889,6 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 			}	
 			if(c != getbkcolor()) {
 				sf.col=sx; sf.row=sy; sf.color=c;
-				printf("%d,%d,%d\n", sf.col, sf.row, sf.color);
 				//fp<<sf.col<<','<<sf.row<<','<<sf.color<<',';
 				fprintf(fp, "%d,%d,%d\n", sf.col, sf.row, sf.color);
 			}
