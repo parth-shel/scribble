@@ -879,7 +879,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  	//iteratively store all pixels into the file:
 	for(sx=1;sx<639;sx++) {
  		for(sy=15;sy<450;sy++) {
-			rgb_mode = 1;
+			//rgb_mode = 1;
 			c = getpixel(sx,sy);	
 			//if(c != getbkcolor()) {
 				sf.col=sx; sf.row=sy; sf.color=c;
