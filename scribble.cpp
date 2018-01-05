@@ -932,8 +932,11 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 		
 	//file reading and tokenizing to disp pixels:
 		while(fscanf(fp, "%d,%d,%d\n", &sf.col, &sf.row, &sf.color) != EOF) {
-			putpixel(sf.col, sf.row, sf.color);
-		}	
+			//putpixel(sf.col, sf.row, sf.color);
+			setcolor(sf.color);
+			_putpixel(sf.col, sf.row);
+		}
+		setcolor(WHITE);	
 	}
 
  	//fp.close();
