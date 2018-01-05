@@ -708,7 +708,7 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 				x = mousex();
 				y = mousey();
 				//restrictmouseptr(1+xrad,15+yrad,639-xrad,449-yrad);
-				if(x>a && x<a+xrad+xrad && y>b && y<b+yrad+yrad && button==1){
+				if(x>1+xrad && x<639-xrad && y>15+yrad && y<449-yrad && button==1){
 				//while(button==1){
 				//     		showmouseptr();
 				//		getmousepos(&button,&x,&y);
