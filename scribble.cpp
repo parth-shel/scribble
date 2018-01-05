@@ -922,7 +922,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 		}*/
 		
 	//TODO: file reading and tokenizing to disp pixels
-		while(fscanf(fp, "%d,%d,%d,\n", &sf.col, &sf.row, &sf.color) == 1) {
+		while(fscanf(fp, "%d,%d,%d,\n", &sf.col, &sf.row, &sf.color)) {
 			printf("%d,%d,%d,\n", sf.col, sf.row, sf.color);
 			putpixel(sf.col, sf.row, sf.color);
 		}	
