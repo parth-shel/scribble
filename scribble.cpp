@@ -399,7 +399,7 @@ void scribblepad( unsigned int pensize, unsigned int pencolor, unsigned int draw
 	 setcolor(WHITE);
 	 setfillstyle(1,15);
 	 setlinestyle(1,0,1);
-	 rectangle(258,458,273,472);//selection tool
+	 rectangle(258,458,272,471);//selection tool
 	 setlinestyle(0,0,1);
 	 line(232,473,232,472);//drawing tool
 	 line(232,473,233,473);
