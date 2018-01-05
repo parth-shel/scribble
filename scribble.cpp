@@ -876,14 +876,14 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  	outtextxy(3,2,"Working on it...");
  	//fp.open(fname,ios::out);
 	fp = fopen(fname, "w+");
- 	for(sx=1;sx<=100/*639*/;sx++) {
- 		for(sy=15;sy<=100/*450*/;sy++) {
+ 	for(sx=1;sx<=200/*639*/;sx++) {
+ 		for(sy=15;sy<=200/*450*/;sy++) {
 			c = getpixel(sx,sy);	
-			if(c != getbkcolor()) {
+			//if(c != getbkcolor()) {
 				sf.col=sx; sf.row=sy; sf.color=c;
 				//fp<<sf.col<<','<<sf.row<<','<<sf.color<<',';
 				fprintf(fp, "%d,%d,%d,\n", sf.col, sf.row, sf.color);
-			}
+			//}
  		}
  	}
  	//fp.close();
