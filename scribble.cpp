@@ -884,7 +884,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 			//c = getpixel(sx,sy);
 			unsigned long p = XGetPixel(pixel_buffer, sx, sy);
 			for(unsigned int i = 0;i < MAXCOLORS+1;i++) {
-				if(vga_palette[i].pixel_value = p)
+				if(vga_palette[i].pixel_value == p)
 					c = i;
 			}	
 			//if(c != getbkcolor()) {
@@ -895,7 +895,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 			//}
  		}
  	}
-	//XDestroyImage(pixel_buffer);
+	XDestroyImage(pixel_buffer);
  	//fp.close();
 	fclose(fp);
  	clearTopText();
