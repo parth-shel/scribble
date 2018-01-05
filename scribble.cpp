@@ -151,7 +151,7 @@ int main()
 {
 int gd,gm,errorcode;
 //initialize graphics mode
-gd=DETECT;
+//gd=DETECT;
 //initgraph(&gd,&gm,"");
 initwindow(640, 480);
 
@@ -879,6 +879,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  	//iteratively store all pixels into the file:
 	for(sx=1;sx<=100/*639*/;sx++) {
  		for(sy=15;sy<=100/*450*/;sy++) {
+			rgb_mode = 1;
 			c = getpixel(sx,sy);	
 			//if(c != getbkcolor()) {
 				sf.col=sx; sf.row=sy; sf.color=c;
