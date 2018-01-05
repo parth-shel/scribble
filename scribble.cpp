@@ -747,18 +747,18 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 	x1=0;y1=0;x2=0;y2=0;
 	}
  else if(x>1 && x<639 && y>15 && y<450 &&button==1 && drawselect==5){//Filled Box Tool
-	while(1){
-		showmouseptr();
+	//while(1){
+		//showmouseptr();
 		//getmousepos(&button,&x,&y);
-		button = mouseclick();
-		x = mousex();
-		y = mousey();
-		if(x>1 && x<639 && y>15 && y<450 && button==1){
+		//button = mouseclick();
+		//x = mousex();
+		//y = mousey();
+		//if(x>1 && x<639 && y>15 && y<450 && button==1){
 		    putpixel(x,y,pencolor);
 		    x1=x;y1=y;
-		    break;
-		    }
-		}
+		    //break;
+		    //}
+		//}
 	while(1){//drag mouse
 		showmouseptr();
 		//getmousepos(&button,&x,&y);
