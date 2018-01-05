@@ -877,12 +877,12 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  	//fp.open(fname,ios::out);
 	fp = fopen(fname, "w+");
  	//iteratively store all pixels into the file:
-	getpixel_buffer = XGetImage(dpy, window, 0, 0, getmaxx()+1, getmaxy()+1, AllPlanes, XYPixmap);
+	XImage * pixel_buffer = XGetImage(dpy, window, 0, 0, getmaxx()+1, getmaxy()+1, AllPlanes, XYPixmap);
 	for(sx=1;sx<639;sx++) {
  		for(sy=15;sy<450;sy++) {
 			//rgb_mode = 1;
 			//c = getpixel(sx,sy);
-			unsigned long p = XGetPixel(getpixel_buffer, sx, sy);
+			unsigned long p = XGetPixel(pixel_buffer, sx, sy);
 			for(int i = 0;i < MAXCOLORS+1;i++) {
 				if(vga_palette[i].pixel_value = p)
 					c = i;
@@ -895,6 +895,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 			//}
  		}
  	}
+	XDestroyImage(pixel_buffer);
  	//fp.close();
 	fclose(fp);
  	clearTopText();
