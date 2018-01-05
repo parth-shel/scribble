@@ -759,13 +759,13 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 		    break;
 		    }
 		}
-	while(x>1 && x<639 && y>15 && y<450 && button==1){//drag mouse
+	while(1){//drag mouse
 		showmouseptr();
 		//getmousepos(&button,&x,&y);
 		button = mouseclick();
 		x = mousex();
 		y = mousey();
-		if(button==0){
+		if(x>1 && x<639 && y>15 && y<450 && button==1) {
 			x2=x;y2=y;
 			break;
 			}
