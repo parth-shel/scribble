@@ -530,7 +530,7 @@ while(1)
 			//showmouseptr();
 			//getmousepos(&button,&x,&y);
 			//if(x>1 && x<639 && y>15 && y<450 && button==1){
-				putpixel(x,y,pencolor);
+				//putpixel(x,y,pencolor);
 				x1=x;y1=y;
 				//break;
 				//}
@@ -576,7 +576,7 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 		//showmouseptr();
 		//getmousepos(&button,&x,&y);
 		//if(x>1 && x<639 && y>15 && y<450 && button==1){
-		  putpixel(x,y,pencolor);
+		  //putpixel(x,y,pencolor);
 		  x1=x;y1=y;
 		  //break;
 		  //}
