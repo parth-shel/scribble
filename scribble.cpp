@@ -883,7 +883,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 			//rgb_mode = 1;
 			//c = getpixel(sx,sy);
 			unsigned long p = XGetPixel(pixel_buffer, sx, sy);
-			for(int i = 0;i < MAXCOLORS+1;i++) {
+			for(unsigned int i = 0;i < MAXCOLORS+1;i++) {
 				if(vga_palette[i].pixel_value = p)
 					c = i;
 			}	
