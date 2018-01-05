@@ -895,7 +895,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 			//}
  		}
  	}
-	XDestroyImage(pixel_buffer);
+	//XDestroyImage(pixel_buffer);
  	//fp.close();
 	fclose(fp);
  	clearTopText();
