@@ -655,19 +655,22 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 	x1=0;y1=0;x2=0;y2=0;
 	}
  else if(x>1 && x<639 && y>15 && y<450 &&button==1 && drawselect==8){//Selection Tool
-	while(1){
-		showmouseptr();
-		getmousepos(&button,&x,&y);
-		if(x>1 && x<639 && y>15 && y<450 && button==1){
+	//while(1){
+		//showmouseptr();
+		//getmousepos(&button,&x,&y);
+		//if(x>1 && x<639 && y>15 && y<450 && button==1){
 		    putpixel(x,y,pencolor);
 		    x1=x;y1=y;
-		    break;
-		    }
-		}
-	while(x>1 && x<639 && y>15 && y<450 && button==1){//drag mouse
-		showmouseptr();
-		getmousepos(&button,&x,&y);
-		if(button==0){
+		    //break;
+		    //}
+		//}
+	while(1){//drag mouse
+		//showmouseptr();
+		//getmousepos(&button,&x,&y);
+		button = mouseclick();
+		x = mousex();
+		y = mousey();
+		if(x>1 && x<639 && y>15 && y<450 && button==1){
 			x2=x;y2=y;
 			break;
 			}
@@ -698,35 +701,38 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 			  yrad=(y2-y1)/2;
 			  b=y1;
 			}
-				while(1){
+			while(1){
 				//showmouseptr();
-				getmousepos(&button,&x,&y);
-				restrictmouseptr(1+xrad,15+yrad,639-xrad,449-yrad);
-				  // if(x>a && x<a+xrad+xrad && y>b && y<b+yrad+yrad && button==1){
-				    //	while(button==1){
+				//getmousepos(&button,&x,&y);
+				button = mouseclick();
+				x = mousex();
+				y = mousey();
+				//restrictmouseptr(1+xrad,15+yrad,639-xrad,449-yrad);
+				if(x>a && x<a+xrad+xrad && y>b && y<b+yrad+yrad && button==1){
+				//while(button==1){
 				//     		showmouseptr();
-				  //		getmousepos(&button,&x,&y);
-				    //		restrictmouseptr(1+xrad,10+yrad,639-xrad,449-yrad);
-						if(button==1){
-							mousehide();
-							putimage(x-xrad,y-yrad,image,COPY_PUT);
-							free(image);
-							setcolor(BLACK);
-							setfillstyle(1,BLACK);
-							bar(x1,y1,x2,y2);
-							setfillstyle(1,WHITE);
-							setcolor(WHITE);
-							showmouseptr();
-							drawselect=1;
-							drawingToolBtn.show();
-							drawingToolBtn.select();
-							selectionToolBtn.unselect();
-							restrictmouseptr(2,15,638,479);
-							break;
-							}
+				//		getmousepos(&button,&x,&y);
+				//		restrictmouseptr(1+xrad,10+yrad,639-xrad,449-yrad);
+					//if(button==1){
+						//mousehide();
+						putimage(x-xrad,y-yrad,image,COPY_PUT);
+						free(image);
+						setcolor(BLACK);
+						setfillstyle(1,BLACK);
+						bar(x1,y1,x2,y2);
+						setfillstyle(1,WHITE);
+						setcolor(WHITE);
+						showmouseptr();
+						drawselect=1;
+						drawingToolBtn.show();
+						drawingToolBtn.select();
+						selectionToolBtn.unselect();
+						restrictmouseptr(2,15,638,479);
+						break;
+				}
 				//		}
 				  //	}
-				}
+			}
 	x1=0;y1=0;x2=0;y2=0;
 	xrad=0;yrad=0;a=0;b=0;
 	}
