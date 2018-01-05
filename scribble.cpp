@@ -632,7 +632,7 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 		//showmouseptr();
 		//getmousepos(&button,&x,&y);
 		button = mouseclick();
-		x = mouseclick();
+		x = mousex();
 		y = mousey();
 		if(x>1 && x<639 && y>15 && y<639 && button==1){
 			x2=x;y2=y;
