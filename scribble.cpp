@@ -68,7 +68,6 @@ int pressEffect()
 		unsigned int sz ;
 		sz = imagesize(left,top,right,bottom);
 		void * image = (void *)malloc(sz);
-		//mousehide();
 		getimage(left,top,right,bottom,image);
 		setfillstyle(SOLID_FILL,WHITE);
 		setcolor(WHITE);
@@ -92,7 +91,6 @@ int pressEffect()
 		putimage(a,b,image,COPY_PUT);
 		free(image);
 		//delay(100);
-		//showmouseptr();
 		setcolor(WHITE);
 		return(1);
 	}
@@ -171,7 +169,6 @@ if (errorcode != grOk)  // an error occurred
 }
 
 cleardevice();
-//setposi(320,190);//set mouse position
 mainmenu();
 closegraph();
 return 0;
@@ -350,7 +347,6 @@ void scribblepad( unsigned int pensize, unsigned int pencolor, unsigned int draw
  unsigned int a=0,b=0,xrad=0,yrad=0;
  unsigned int lsize;
  int hotKey;
- mousehide();
  cleardevice();
 	 roundedRectangle(1,15,639,450,7);//Scribble Area
 	 buttons doneBtn(595,455,635,475);//Done btn
@@ -526,18 +522,8 @@ while(1)
 	 spray(x,y,pensize,pencolor);
  }
  else if(x>1 && x<639 && y<450 && y>15 && button==1 && drawselect==6){//Circle Tool
-		//while(1){
-			//showmouseptr();
-			//getmousepos(&button,&x,&y);
-			//if(x>1 && x<639 && y>15 && y<450 && button==1){
-				//putpixel(x,y,pencolor);
-				x1=x;y1=y;
-				//break;
-				//}
-			//}
+		x1=x;y1=y;
 		while(1){//drag mouse
-			//showmouseptr();
-			//getmousepos(&button,&x,&y);
 			button = mouseclick();
 			x = mousex();
 			y = mousey();
@@ -563,27 +549,15 @@ while(1)
 			  yrad=(y2-y1)/2;
 			}
 			setcolor(pencolor);
-			mousehide();
 			ellipse(a,b,0,360,xrad,yrad);
-			showmouseptr();
 			setcolor(WHITE);
 			x1=0;x2=0;y1=0;y2=0;
 			a=0;b=0;xrad=0;yrad=0;
 
 	}
 else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button==1 && drawselect==7){//Filled Circle Tool
-	//while(1){
-		//showmouseptr();
-		//getmousepos(&button,&x,&y);
-		//if(x>1 && x<639 && y>15 && y<450 && button==1){
-		  //putpixel(x,y,pencolor);
-		  x1=x;y1=y;
-		  //break;
-		  //}
-		//}
+	x1=x;y1=y;
 	while(1){//drag mouse
-		//showmouseptr();
-		//getmousepos(&button,&x,&y);
 		button = mouseclick();
 		x = mousex();
 		y = mousey();
@@ -608,29 +582,18 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 			  b=y1+((y2-y1)/2);
 			  yrad=(y2-y1)/2;
 			}
-			 mousehide();
 			 setcolor(pencolor);
 			 setfillstyle(1,pencolor);
 			 fillellipse(a,b,xrad,yrad);
 			 setcolor(WHITE);
 			 setfillstyle(1,WHITE);
-			 showmouseptr();
 			 x1=0;x2=0;y1=0;y2=0;
 			 a=0;b=0;xrad=0;yrad=0;
 	}
  else if(x>1 && x<639 && y>15 && y<450 &&button==1 && drawselect==3){//Line Tool
-	//while(1){
-		//showmouseptr();
-		//getmousepos(&button,&x,&y);
-		//if(x>1 && x<639 && y>15 && y<450 && button==1){
-		    putpixel(x,y,pencolor);
-		    x1=x;y1=y;
-		    //break;
-		    //}
-		//}
+	putpixel(x,y,pencolor);
+	x1=x;y1=y;
 	while(1){//drag mouse
-		//showmouseptr();
-		//getmousepos(&button,&x,&y);
 		button = mouseclick();
 		x = mousex();
 		y = mousey();
@@ -647,26 +610,15 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 	    lsize=3;
 	setcolor(pencolor);
 	setlinestyle(0,0,lsize);
-	mousehide();
 	line(x1,y1,x2,y2);
-	showmouseptr();
 	setcolor(WHITE);
 	setlinestyle(0,0,1);
 	x1=0;y1=0;x2=0;y2=0;
 	}
  else if(x>1 && x<639 && y>15 && y<450 &&button==1 && drawselect==8){//Selection Tool
-	//while(1){
-		//showmouseptr();
-		//getmousepos(&button,&x,&y);
-		//if(x>1 && x<639 && y>15 && y<450 && button==1){
-		    putpixel(x,y,pencolor);
-		    x1=x;y1=y;
-		    //break;
-		    //}
-		//}
+	putpixel(x,y,pencolor);
+	x1=x;y1=y;
 	while(1){//drag mouse
-		//showmouseptr();
-		//getmousepos(&button,&x,&y);
 		button = mouseclick();
 		x = mousex();
 		y = mousey();
@@ -678,13 +630,10 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 	 unsigned int sz ;
 	 sz = imagesize(x1,y1,x2,y2);
 	 void * image = (void *)malloc(sz);
-	 mousehide();
 	 getimage(x1,y1,x2,y2,image);
-	 mousehide();
 	 setlinestyle(1,0,1);
 	 rectangle(x1,y1,x2,y2);
 	 setlinestyle(0,0,1);
-	 showmouseptr();
 			if (x1<x2){
 			  xrad=(x2-x1)/2;
 			  a=x1;
@@ -702,19 +651,10 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 			  b=y1;
 			}
 			while(1){
-				//showmouseptr();
-				//getmousepos(&button,&x,&y);
 				button = mouseclick();
 				x = mousex();
 				y = mousey();
-				//restrictmouseptr(1+xrad,15+yrad,639-xrad,449-yrad);
 				if(x>1+xrad && x<639-xrad && y>15+yrad && y<449-yrad && button==1){
-				//while(button==1){
-				//     		showmouseptr();
-				//		getmousepos(&button,&x,&y);
-				//		restrictmouseptr(1+xrad,10+yrad,639-xrad,449-yrad);
-					//if(button==1){
-						//mousehide();
 						putimage(x-xrad,y-yrad,image,COPY_PUT);
 						free(image);
 						setcolor(BLACK);
@@ -722,33 +662,16 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 						bar(x1,y1,x2+1,y2+1);
 						setfillstyle(1,WHITE);
 						setcolor(WHITE);
-						//showmouseptr();
-						//drawselect=1;
-						//drawingToolBtn.show();
-						//drawingToolBtn.select();
-						//selectionToolBtn.unselect();
-						//restrictmouseptr(2,15,638,479);
 						break;
 				}
-				//		}
-				  //	}
 			}
 	x1=0;y1=0;x2=0;y2=0;
 	xrad=0;yrad=0;a=0;b=0;
 	}
  else if(x>1 && x<639 && y>15 && y<450 &&button==1 && drawselect==4){//Box Tool
-	//while(1){
-		//showmouseptr();
-		//getmousepos(&button,&x,&y);
-		//if(x>1 && x<639 && y>15 && y<450 && button==1){
-		    putpixel(x,y,pencolor);
-		    x1=x;y1=y;
-		    //break;
-		    //}
-		//}
+	putpixel(x,y,pencolor);
+	x1=x;y1=y;
 	while(1){//drag mouse
-		//showmouseptr();
-		//getmousepos(&button,&x,&y);
 		button = mouseclick();
 		x = mousex();
 		y = mousey();
@@ -758,28 +681,14 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 			}
 		}
 	setcolor(pencolor);
-	mousehide();
 	rectangle(x1,y1,x2,y2);
-	showmouseptr();
 	setcolor(WHITE);
 	x1=0;y1=0;x2=0;y2=0;
 	}
  else if(x>1 && x<639 && y>15 && y<450 &&button==1 && drawselect==5){//Filled Box Tool
-	//while(1){
-		//showmouseptr();
-		//getmousepos(&button,&x,&y);
-		//button = mouseclick();
-		//x = mousex();
-		//y = mousey();
-		//if(x>1 && x<639 && y>15 && y<450 && button==1){
-		    putpixel(x,y,pencolor);
-		    x1=x;y1=y;
-		    //break;
-		    //}
-		//}
+	putpixel(x,y,pencolor);
+	x1=x;y1=y;
 	while(1){//drag mouse
-		//showmouseptr();
-		//getmousepos(&button,&x,&y);
 		button = mouseclick();
 		x = mousex();
 		y = mousey();
@@ -790,9 +699,7 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 		}
 	 setcolor(pencolor);
 	 setfillstyle(1,pencolor);
-	 mousehide();
 	 bar(x1,y1,x2,y2);
-	 showmouseptr();
 	 setcolor(WHITE);
 	 setfillstyle(1,WHITE);
 	 x1=0;y1=0;x2=0;y2=0;
@@ -803,81 +710,64 @@ else if(x>11+pensize && x<629-pensize && y<430-pensize && y>26+pensize && button
 	scribblepad(pensize,pencolor,drawselect);
  else if(penSize1.press()){ //size 1 btn
 	 pensize=1;
-	 mousehide();
 	 penSize3.unselect();
 	 penSize5.unselect();
 	 penSize1.select();
-	 showmouseptr();
 	 }
  else if(penSize3.press()){ //size 3 btn
 	 pensize=3;
-	 mousehide();
 	 penSize1.unselect();
 	 penSize5.unselect();
 	 penSize3.select();
-	 showmouseptr();
 	 }
 else if(penSize5.press()){ //size 5 btn
 	 pensize=5;
-	 mousehide();
 	 penSize1.unselect();
 	 penSize3.unselect();
 	 penSize5.select();
-	 showmouseptr();
 	 }
 else if(penColorW.press()){ //color white btn
 	 pencolor=WHITE;
-	 mousehide();
 	 penColorR.unselect();
 	 penColorY.unselect();
 	 penColorG.unselect();
 	 penColorB.unselect();
 	 penColorW.select();
-	 showmouseptr();
 	 }
 else if(penColorR.press()){ //color red btn
 	 pencolor=RED;
-	 mousehide();
 	 penColorR.select();
 	 penColorY.unselect();
 	 penColorG.unselect();
 	 penColorB.unselect();
 	 penColorW.unselect();
-	 showmouseptr();
 	 }
 else if(penColorG.press()){ //color green btn
 	 pencolor=GREEN;
-	 mousehide();
 	 penColorR.unselect();
 	 penColorY.unselect();
 	 penColorG.select();
 	 penColorB.unselect();
 	 penColorW.unselect();
-	 showmouseptr();
 	 }
 else if(penColorB.press()){ //color blue btn
 	 pencolor=BLUE;
-	 mousehide();
 	 penColorR.unselect();
 	 penColorY.unselect();
 	 penColorG.unselect();
 	 penColorB.select();
 	 penColorW.unselect();
-	 showmouseptr();
 	 }
 else if(penColorY.press()){ //color yellow btn
 	 pencolor=YELLOW;
-	 mousehide();
 	 penColorR.unselect();
 	 penColorY.select();
 	 penColorG.unselect();
 	 penColorB.unselect();
 	 penColorW.unselect();
-	 showmouseptr();
 	 }
 else if(drawingToolBtn.press()){//drawing tool btn
 	drawselect=1;
-	mousehide();
 	drawingToolBtn.select();
 	selectionToolBtn.unselect();
 	lineToolBtn.unselect();
@@ -886,11 +776,9 @@ else if(drawingToolBtn.press()){//drawing tool btn
 	circleToolBtn.unselect();
 	fillCircleToolBtn.unselect();
 	airBrushToolBtn.unselect();
-	showmouseptr();
 	}
 else if(airBrushToolBtn.press()){//airbrush tool btn
 	drawselect=2;
-	mousehide();
 	drawingToolBtn.unselect();
 	selectionToolBtn.unselect();
 	lineToolBtn.unselect();
@@ -899,11 +787,9 @@ else if(airBrushToolBtn.press()){//airbrush tool btn
 	circleToolBtn.unselect();
 	fillCircleToolBtn.unselect();
 	airBrushToolBtn.select();
-	showmouseptr();
 	}
 else if(selectionToolBtn.press()){//selection tool btn
 	drawselect=8;
-	mousehide();
 	drawingToolBtn.unselect();
 	selectionToolBtn.select();
 	lineToolBtn.unselect();
@@ -912,11 +798,9 @@ else if(selectionToolBtn.press()){//selection tool btn
 	circleToolBtn.unselect();
 	fillCircleToolBtn.unselect();
 	airBrushToolBtn.unselect();
-	showmouseptr();
 	}
 else if(lineToolBtn.press()){//line tool btn
 	drawselect=3;
-	mousehide();
 	drawingToolBtn.unselect();
 	selectionToolBtn.unselect();
 	lineToolBtn.select();
@@ -925,11 +809,9 @@ else if(lineToolBtn.press()){//line tool btn
 	circleToolBtn.unselect();
 	fillCircleToolBtn.unselect();
 	airBrushToolBtn.unselect();
-	showmouseptr();
 	}
  else if(boxToolBtn.press()){//box tool btn
 	drawselect=4;
-	mousehide();
 	drawingToolBtn.unselect();
 	selectionToolBtn.unselect();
 	lineToolBtn.unselect();
@@ -938,11 +820,9 @@ else if(lineToolBtn.press()){//line tool btn
 	circleToolBtn.unselect();
 	fillCircleToolBtn.unselect();
 	airBrushToolBtn.unselect();
-	showmouseptr();
 	}
 else if(fillBoxToolBtn.press()){//filled box tool btn
 	drawselect=5;
-	mousehide();
 	drawingToolBtn.unselect();
 	selectionToolBtn.unselect();
 	lineToolBtn.unselect();
@@ -951,11 +831,9 @@ else if(fillBoxToolBtn.press()){//filled box tool btn
 	circleToolBtn.unselect();
 	fillCircleToolBtn.unselect();
 	airBrushToolBtn.unselect();
-	showmouseptr();
 	}
 else if(circleToolBtn.press()){//circle tool btn
 	drawselect=6;
-	mousehide();
 	drawingToolBtn.unselect();
 	selectionToolBtn.unselect();
 	lineToolBtn.unselect();
@@ -964,11 +842,9 @@ else if(circleToolBtn.press()){//circle tool btn
 	circleToolBtn.select();
 	fillCircleToolBtn.unselect();
 	airBrushToolBtn.unselect();
-	showmouseptr();
 	}
 else if(fillCircleToolBtn.press()){//filled circle tool btn
 	drawselect=7;
-	mousehide();
 	drawingToolBtn.unselect();
 	selectionToolBtn.unselect();
 	lineToolBtn.unselect();
@@ -977,7 +853,6 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 	circleToolBtn.unselect();
 	fillCircleToolBtn.select();
 	airBrushToolBtn.unselect();
-	showmouseptr();
 	}
  else if(saveBtn.press()){//saving image
  	clearTopText();
@@ -1200,7 +1075,6 @@ void clearTopText() {
 //@throws: void
 //@author: Parth S.
  void spray(int a, int b, int s, int c){
- mousehide();
 	putpixel(a-s/2,b-s/3,c);
 	putpixel(a+s/2,b-s/1,c);
 	putpixel(a-s/3,b-s/1,c);
@@ -1226,7 +1100,6 @@ void clearTopText() {
 	putpixel(a-s/2,b+s/1,c);
 	putpixel(a+s/1,b-s/2,c);
 	putpixel(a+s/2,b-s/3,c);
- showmouseptr();
  }
 
 //Method to draw Rounded Rectangles
@@ -1322,18 +1195,14 @@ void flushKeyboard()
 // Mouse Functions :
 
 // Method to show cursor
-void showmouseptr()
-{
-/*
+/*void showmouseptr() {
 in.x.ax=1;
 int86(0x33, &in, &out);
-*/
-}
+}*/
 
 // Method to get status of mouse pointer:
 //including position of pointer & buttons pressed
-void getmousepos(int *button, int *x, int *y)
-{
+void getmousepos(int *button, int *x, int *y) {
 /*
 in.x.ax=3;
 int86(0x33, &in, &out);
@@ -1353,27 +1222,21 @@ int86(0x33, &in, &out);
 }
 
 // Method to set mouse position
-void setposi(int &x,int &y) {
- /*
+/*void setposi(int &x,int &y) {
  in.x.ax=4;
  in.x.cx=x;
  in.x.dx=y;
  int86(51,&in,&out);
- */
-}
+}*/
 
 // Method to hide mouse
-void mousehide() {
- /*
+/*void mousehide() {
  in.x.ax=2;
- int86(51,&in,&out);
- */ 
-}
+ int86(51,&in,&out); 
+}*/
 
 // Method to restrict mouse
-void restrictmouseptr(int x1,int y1,int x2,int y2)
- {
- /*
+/*void restrictmouseptr(int x1,int y1,int x2,int y2) {
  in.x.ax=7;
  in.x.cx=x1;
  in.x.dx=x2;
@@ -1382,5 +1245,4 @@ void restrictmouseptr(int x1,int y1,int x2,int y2)
  in.x.cx=y1;
  in.x.dx=y2;
  int86(51,&in,&out);
- */ 
-}
+}*/
