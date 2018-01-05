@@ -883,7 +883,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 			//if(c != getbkcolor()) {
 				sf.col=sx; sf.row=sy; sf.color=c;
 				//fp<<sf.col<<','<<sf.row<<','<<sf.color<<',';
-				fprintf(fp, "%d%d%d", sf.col, sf.row, sf.color);
+				fprintf(fp, "%d,%d,%d\n", sf.col, sf.row, sf.color);
 			//}
  		}
  	}
@@ -926,7 +926,7 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 		}*/
 		
 	//file reading and tokenizing to disp pixels:
-		while(fscanf(fp, "%d%d%d", &sf.col, &sf.row, &sf.color) != EOF) {
+		while(fscanf(fp, "%d,%d,%d\n", &sf.col, &sf.row, &sf.color) != EOF) {
 			putpixel(sf.col, sf.row, sf.color);
 		}	
 	}
