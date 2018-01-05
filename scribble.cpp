@@ -877,8 +877,8 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
  	//fp.open(fname,ios::out);
 	fp = fopen(fname, "w+");
  	//iteratively store all pixels into the file:
-	for(sx=1;sx<=200/*639*/;sx++) {
- 		for(sy=15;sy<=200/*450*/;sy++) {
+	for(sx=1;sx<=100/*639*/;sx++) {
+ 		for(sy=15;sy<=100/*450*/;sy++) {
 			c = getpixel(sx,sy);	
 			//if(c != getbkcolor()) {
 				sf.col=sx; sf.row=sy; sf.color=c;
