@@ -878,8 +878,8 @@ else if(fillCircleToolBtn.press()){//filled circle tool btn
 	fp = fopen(fname, "w+");
  	//iteratively store all pixels into the file:
 	XImage * pixel_buffer = XGetImage(dpy, window, 0, 0, getmaxx()+1, getmaxy()+1, AllPlanes, XYPixmap);
-	for(sx=2;sx<639;sx++) {
- 		for(sy=16;sy<450;sy++) {
+	for(sx=1;sx<641;sx++) {
+ 		for(sy=15;sy<451;sy++) {
 			//rgb_mode = 1;
 			//c = getpixel(sx,sy);
 			unsigned long p = XGetPixel(pixel_buffer, sx, sy);
