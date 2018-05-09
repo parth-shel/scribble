@@ -27,3 +27,7 @@
 *.exe
 *.out
 *.app
+scribble
+
+# Swap Files
+*.swp
