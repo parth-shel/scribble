@@ -29,5 +29,8 @@
 *.app
 scribble
 
+# Saved Pictures
+*.PIC
+
 # Swap Files
 *.swp
